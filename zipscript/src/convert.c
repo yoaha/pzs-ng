@@ -615,6 +615,9 @@ convert(struct VARS *raceI, struct USERINFO **userI, struct GROUPINFO **groupI, 
 			case 'e':
 				out_p += sprintf(out_p, "%*.*f", val1, val2, (double)((raceI->file.size * raceI->total.files >> 10) / 1024.));
 				break;
+			case '[':
+				out_p += sprintf(out_p, "%*i", val1, (int)raceI->file.size);
+				break;
 			case 'f':
 				out_p += sprintf(out_p, "%*i", val1, (int)raceI->total.files);
 				break;

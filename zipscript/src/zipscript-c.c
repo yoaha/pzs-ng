@@ -125,7 +125,7 @@ main(int argc, char **argv)
 	/*
 	 * Adding version-number to head if .debug message 15.09.2004 - psxc
 	 */
-	d_log("zipscript-c: Project-ZS Next Generation (pzs-ng) %s debug log.\n", NG_VERSION);
+	d_log("zipscript-c: Project-ZS Next Generation (pzs-ng) %s debug log.\n", ng_version);
 
 #ifdef _ALT_MAX
 	d_log("zipscript-c: PATH_MAX not found - using predefined settings! Please report to the devs!\n");
@@ -160,7 +160,7 @@ main(int argc, char **argv)
 #ifdef USING_GLFTPD
 	if (argc < 4) {
 		d_log("zipscript-c: Wrong number of arguments used\n");
-		printf(" - - PZS-NG ZipScript-C %s - -\n\nUsage: %s <filename> <path> <crc>\n", NG_VERSION, argv[0]);
+		printf(" - - PZS-NG ZipScript-C %s - -\n\nUsage: %s <filename> <path> <crc>\n", ng_version, argv[0]);
 		printf("Usage: %s --(full)config - shows (full) config compiled.\n\n", argv[0]);
 		exit(1);
 	}
@@ -168,7 +168,7 @@ main(int argc, char **argv)
 #else
 	if (argc < 8) {
 		d_log("zipscript-c: Wrong number of arguments used (ftpd-agnostic)\n");
-		printf(" - - PZS-NG ZipScript-C %s - -\n\nUsage: %s <absolute filepath> <crc> <user> <group> <tagline> <speed> <section>\n", NG_VERSION, argv[0]);
+		printf(" - - PZS-NG ZipScript-C %s - -\n\nUsage: %s <absolute filepath> <crc> <user> <group> <tagline> <speed> <section>\n", ng_version, argv[0]);
 		printf(" Usage: %s --(full)config - shows (full) config compiled.\n\n", argv[0]);
 		exit(1);
 	}
@@ -1291,6 +1291,8 @@ main(int argc, char **argv)
 					d_log("zipscript-c: Printing realtime_audio_info.\n");
 					printf("%s", convert(&g.v, g.ui, g.gi, realtime_audio_info));
 				}
+                /* write COMPLETE_AUDIO_TRACK */
+				writelog(&g, convert(&g.v, g.ui, g.gi, audio_complete_audio_track), audio_complete_audio_track_type);
 				break;
 			case RTYPE_VIDEO:
 //				d_log("zipscript-c: Trying to read video header.\n");

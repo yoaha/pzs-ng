@@ -61,6 +61,7 @@
 #define audio_vbr_announce_one_race_complete_type	"COMPLETE_STAT_RACE_AUDIO_VBR"
 #define audio_cbr_announce_race_complete_type		"COMPLETE_RACE_AUDIO_CBR"
 #define audio_cbr_announce_one_race_complete_type	"COMPLETE_STAT_RACE_AUDIO_CBR"
+#define audio_complete_audio_track_type "COMPLETE_AUDIO_TRACK"
 #define general_announce_race_complete_type		"COMPLETE_RACE"
 #define general_announce_one_race_complete_type		"COMPLETE_STAT_RACE"
 #define audio_announce_vbr_update_type			"UPDATE_VBR"
@@ -168,6 +169,9 @@
 #define audio_vbr		"{%w} {%Y} {%X} {%z} {%Q} {VBR} {%I} {%i} {%x} {%W} {%y} {%h} {%q} {%@} {%_} {%/} {%\\} {%(} {%)} {%|}"	/* Put in %j cookie */
 //#define audio_vbr		"{%w} {%Y} {%X} {%z} {%Q} {VBR} {%I} {%i} {%x} {%W} {%y} {%h} {%q} {%@} {%_} {%(} {%)} {%|}"	/* Put in %j cookie */
 #define audio_cbr		"{%w} {%Y} {%X} {%z} {%Q} {CBR} {%x} {%W} {%y} {%h} {%q}"			/* Put in %j cookie */
+
+#define audio_complete		"{%r} {%.0m} {%f} {%.0A} {%.0a} {%d} {%&} {%u} {%g} %j %l %L %C0 %c0 {%n} {%B} {%t} {%T}"
+#define audio_complete_audio_track "{%n} {%?} {%x} {%w} {%W} {%y} {%Y} {%[}"
 
 /*
  * Audio files - currently used only for flac & mp3 (mpeg2 layer3),
